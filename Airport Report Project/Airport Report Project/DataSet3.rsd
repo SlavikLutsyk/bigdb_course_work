@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet3">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Stewardess 1'[Crew Id], 'Stewardess 1'[Name], 'Stewardess 1'[Birth Date], 'Stewardess 1'[Address], 'Stewardess 1'[Role], FILTER(VALUES('Stewardess 1'[Role]), ('Stewardess 1'[Role] = "Stewardess")))</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Stewardess 1</DimensionName>
+                    <HierarchyName>Crew Id</HierarchyName>
+                    <HierarchyUniqueName>[Stewardess 1].[Crew Id]</HierarchyUniqueName>
+                    <LevelName>Crew Id</LevelName>
+                    <UniqueName>[Stewardess 1].[Crew Id].[Crew Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Crew Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Stewardess 1</DimensionName>
+                    <HierarchyName>Name</HierarchyName>
+                    <HierarchyUniqueName>[Stewardess 1].[Name]</HierarchyUniqueName>
+                    <LevelName>Name</LevelName>
+                    <UniqueName>[Stewardess 1].[Name].[Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Stewardess 1</DimensionName>
+                    <HierarchyName>Birth Date</HierarchyName>
+                    <HierarchyUniqueName>[Stewardess 1].[Birth Date]</HierarchyUniqueName>
+                    <LevelName>Birth Date</LevelName>
+                    <UniqueName>[Stewardess 1].[Birth Date].[Birth Date]</UniqueName>
+                  </ID>
+                  <ItemCaption>Birth Date</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Stewardess 1</DimensionName>
+                    <HierarchyName>Address</HierarchyName>
+                    <HierarchyUniqueName>[Stewardess 1].[Address]</HierarchyUniqueName>
+                    <LevelName>Address</LevelName>
+                    <UniqueName>[Stewardess 1].[Address].[Address]</UniqueName>
+                  </ID>
+                  <ItemCaption>Address</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Stewardess 1</DimensionName>
+                    <HierarchyName>Role</HierarchyName>
+                    <HierarchyUniqueName>[Stewardess 1].[Role]</HierarchyUniqueName>
+                    <LevelName>Role</LevelName>
+                    <UniqueName>[Stewardess 1].[Role].[Role]</UniqueName>
+                  </ID>
+                  <ItemCaption>Role</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Airport DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Stewardess 1].[Role]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Stewardess 1].[Role].&amp;[Stewardess]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Stewardess 1'[Crew Id], 'Stewardess 1'[Name], 'Stewardess 1'[Birth Date], 'Stewardess 1'[Address], 'Stewardess 1'[Role], FILTER(VALUES('Stewardess 1'[Role]), ('Stewardess 1'[Role] = "Stewardess")))</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Crew_Id">
+        <DataField>Stewardess 1[Crew Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>Stewardess 1[Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Address">
+        <DataField>Stewardess 1[Address]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Birth_Date">
+        <DataField>Stewardess 1[Birth Date]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Role">
+        <DataField>Stewardess 1[Role]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

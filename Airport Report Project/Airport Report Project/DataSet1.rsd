@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Plane'[Plane Id], 'Pilot'[Crew Id], 'Pilot'[Name], 'Pilot'[Birth Date], 'Pilot'[Address], 'Pilot'[Role], 'Dim Plane'[Model Id], FILTER(VALUES('Dim Plane'[Model Id]), ('Dim Plane'[Model Id] = VALUE("5"))), FILTER(VALUES('Pilot'[Role]), ('Pilot'[Role] = "Pilot")))</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Plane</DimensionName>
+                    <HierarchyName>Plane Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Plane].[Plane Id]</HierarchyUniqueName>
+                    <LevelName>Plane Id</LevelName>
+                    <UniqueName>[Dim Plane].[Plane Id].[Plane Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Plane Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Pilot</DimensionName>
+                    <HierarchyName>Crew Id</HierarchyName>
+                    <HierarchyUniqueName>[Pilot].[Crew Id]</HierarchyUniqueName>
+                    <LevelName>Crew Id</LevelName>
+                    <UniqueName>[Pilot].[Crew Id].[Crew Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Crew Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Pilot</DimensionName>
+                    <HierarchyName>Name</HierarchyName>
+                    <HierarchyUniqueName>[Pilot].[Name]</HierarchyUniqueName>
+                    <LevelName>Name</LevelName>
+                    <UniqueName>[Pilot].[Name].[Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Pilot</DimensionName>
+                    <HierarchyName>Birth Date</HierarchyName>
+                    <HierarchyUniqueName>[Pilot].[Birth Date]</HierarchyUniqueName>
+                    <LevelName>Birth Date</LevelName>
+                    <UniqueName>[Pilot].[Birth Date].[Birth Date]</UniqueName>
+                  </ID>
+                  <ItemCaption>Birth Date</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Pilot</DimensionName>
+                    <HierarchyName>Address</HierarchyName>
+                    <HierarchyUniqueName>[Pilot].[Address]</HierarchyUniqueName>
+                    <LevelName>Address</LevelName>
+                    <UniqueName>[Pilot].[Address].[Address]</UniqueName>
+                  </ID>
+                  <ItemCaption>Address</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Pilot</DimensionName>
+                    <HierarchyName>Role</HierarchyName>
+                    <HierarchyUniqueName>[Pilot].[Role]</HierarchyUniqueName>
+                    <LevelName>Role</LevelName>
+                    <UniqueName>[Pilot].[Role].[Role]</UniqueName>
+                  </ID>
+                  <ItemCaption>Role</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Plane</DimensionName>
+                    <HierarchyName>Model Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Plane].[Model Id]</HierarchyUniqueName>
+                    <LevelName>Model Id</LevelName>
+                    <UniqueName>[Dim Plane].[Model Id].[Model Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Model Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Airport DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Plane].[Model Id]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Dim Plane].[Model Id].&amp;[5]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[Pilot].[Role]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Pilot].[Role].&amp;[Pilot]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Plane'[Plane Id], 'Pilot'[Crew Id], 'Pilot'[Name], 'Pilot'[Birth Date], 'Pilot'[Address], 'Pilot'[Role], 'Dim Plane'[Model Id], FILTER(VALUES('Dim Plane'[Model Id]), ('Dim Plane'[Model Id] = VALUE("5"))), FILTER(VALUES('Pilot'[Role]), ('Pilot'[Role] = "Pilot")))</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Plane_Id">
+        <DataField>Dim Plane[Plane Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Address">
+        <DataField>Pilot[Address]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Birth_Date">
+        <DataField>Pilot[Birth Date]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>Pilot[Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Role">
+        <DataField>Pilot[Role]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Model_Id">
+        <DataField>Dim Plane[Model Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Crew_Id">
+        <DataField>Pilot[Crew Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

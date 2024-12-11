@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-21RFT4C_DBSQL.AirportDW"
+  DTS:DTSID="{B96225C9-A7FD-4580-9732-FB33438EDABA}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-21RFT4C\DBSQL;Initial Catalog=AirportDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Airport Integration Services Project-{B96225C9-A7FD-4580-9732-FB33438EDABA}DESKTOP-21RFT4C\DBSQL.AirportDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet4">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Commander'[Crew Id], 'Commander'[Name], 'Commander'[Role], 'Dim Plane'[Plane Id], FILTER(VALUES('Commander'[Role]), ('Commander'[Role] = "Commander")), "Fact Flights Count", [Fact Flights Count])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Commander</DimensionName>
+                    <HierarchyName>Crew Id</HierarchyName>
+                    <HierarchyUniqueName>[Commander].[Crew Id]</HierarchyUniqueName>
+                    <LevelName>Crew Id</LevelName>
+                    <UniqueName>[Commander].[Crew Id].[Crew Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Crew Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Commander</DimensionName>
+                    <HierarchyName>Name</HierarchyName>
+                    <HierarchyUniqueName>[Commander].[Name]</HierarchyUniqueName>
+                    <LevelName>Name</LevelName>
+                    <UniqueName>[Commander].[Name].[Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Commander</DimensionName>
+                    <HierarchyName>Role</HierarchyName>
+                    <HierarchyUniqueName>[Commander].[Role]</HierarchyUniqueName>
+                    <LevelName>Role</LevelName>
+                    <UniqueName>[Commander].[Role].[Role]</UniqueName>
+                  </ID>
+                  <ItemCaption>Role</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Plane</DimensionName>
+                    <HierarchyName>Plane Id</HierarchyName>
+                    <HierarchyUniqueName>[Dim Plane].[Plane Id]</HierarchyUniqueName>
+                    <LevelName>Plane Id</LevelName>
+                    <UniqueName>[Dim Plane].[Plane Id].[Plane Id]</UniqueName>
+                  </ID>
+                  <ItemCaption>Plane Id</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Fact Flights Count</MeasureName>
+                    <UniqueName>[Measures].[Fact Flights Count]</UniqueName>
+                  </ID>
+                  <ItemCaption>Fact Flights Count</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Airport DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Commander].[Role]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Commander].[Role].&amp;[Commander]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Commander'[Crew Id], 'Commander'[Name], 'Commander'[Role], 'Dim Plane'[Plane Id], FILTER(VALUES('Commander'[Role]), ('Commander'[Role] = "Commander")), "Fact Flights Count", [Fact Flights Count])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Crew_Id">
+        <DataField>Commander[Crew Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>Commander[Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Role">
+        <DataField>Commander[Role]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Plane_Id">
+        <DataField>Dim Plane[Plane Id]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Fact_Flights_Count">
+        <DataField>[Fact Flights Count]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

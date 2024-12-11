@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Airport Integration Services Project", "Airport Integration Services Project\Airport Integration Services Project.dtproj", "{B730B0ED-FB2A-48D0-A875-2D8D1EA068BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B730B0ED-FB2A-48D0-A875-2D8D1EA068BC}.Development|Default.ActiveCfg = Development
+		{B730B0ED-FB2A-48D0-A875-2D8D1EA068BC}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F51FD4FA-7586-43D0-9A53-1A6BC54EAAED}
+	EndGlobalSection
+EndGlobal
